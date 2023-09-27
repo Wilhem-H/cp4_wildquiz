@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
@@ -8,7 +9,7 @@ import { useUser } from "../contexts/UserContext";
 import "./Home.css";
 
 export default function Home() {
-  const { user, setUser } = useUser();
+  const { setUser } = useUser();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

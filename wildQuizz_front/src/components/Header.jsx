@@ -1,10 +1,12 @@
 import { useNavigate } from "react-router-dom";
+
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import IconButton from "@mui/material/IconButton";
-import logo from "/logo2.png";
-import "./Header.css";
 
+import logo from "/logo2.png";
 import { useUser } from "../contexts/UserContext";
+
+import "./Header.css";
 
 export default function Header() {
   const { user, logout } = useUser();

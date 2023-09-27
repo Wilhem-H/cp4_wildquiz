@@ -1,4 +1,5 @@
 import { createContext, useContext, useMemo } from "react";
+import { toast } from "react-toastify";
 
 import useLocalStorage from "./useLocalStorage";
 
@@ -16,7 +17,16 @@ export function UserContextProvider({ children }) {
       .then((response) => response.json())
       .then((data) => {
         if (data === "logout") {
-          window.alert("Vous êtes déconnecté");
+          toast.info("A bientôt ", {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
         }
       });
   };
