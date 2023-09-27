@@ -29,18 +29,16 @@ export function Game() {
         setTimer((prevTimer) => prevTimer - 1);
       }, 1000);
     } else if (timer === 0 && !showScore) {
-      // Si le timer atteint 0 et que le jeu est en cours, passez à la question suivante
       const nextQuestion = currentQuestion + 1;
       if (nextQuestion < selectedQuestions.length) {
         setCurrentQuestion(nextQuestion);
-        setTimer(10); // Réinitialisez le timer pour la nouvelle question
+        setTimer(10);
       } else {
         setShowScore(true);
         updateUser();
       }
     }
 
-    // Nettoyage de l'intervalle lorsque le composant est démonté ou lorsque le jeu se termine
     return () => {
       clearInterval(intervalId);
     };

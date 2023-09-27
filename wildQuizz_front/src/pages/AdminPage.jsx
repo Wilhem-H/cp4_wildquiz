@@ -55,6 +55,7 @@ export default function AdminPage() {
           setError(true);
           setTimeout(() => {
             setError(false);
+            window.location.reload();
           }, "4000");
         }
       });

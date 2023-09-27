@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
 import TextField from "@mui/material/TextField";
 import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 import IconButton from "@mui/material/IconButton";
@@ -42,6 +44,16 @@ export default function Inscription() {
       );
 
       if (response.ok) {
+        toast.info("Compte crée avec succès 🏆 ", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
         navigate("/");
       } else {
         const erreurData = await response.json();
