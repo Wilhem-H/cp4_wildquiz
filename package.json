@@ -3,10 +3,21 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "config": {
+    "cli": "pnpm"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate": "cd ./wildQuizz_back && node migrate.js",
+    "dev": "cross-env-shell 'concurrently -c green,yellow -t \"HH:mm:ss\" -p \"{name} {time}\" \"$npm_package_config_cli:dev-*\"'",
+    "dev-front": "cross-env-shell \"cd ./wildQuizz_front && $npm_package_config_cli run dev\"",
+    "dev-back": "cross-env-shell \"cd ./wildQuizz_back && $npm_package_config_cli run dev\""
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.1",
+    "cross-env": "^7.0.3"
+  }
 }
