@@ -20,7 +20,7 @@ export function Game() {
   const [score, setScore] = useState(0);
   const [bestPlayer, setBestPlayer] = useState({});
 
-  const [timer, setTimer] = useState(10);
+  const [timer, setTimer] = useState(20);
   useEffect(() => {
     let intervalId;
 
@@ -32,7 +32,7 @@ export function Game() {
       const nextQuestion = currentQuestion + 1;
       if (nextQuestion < selectedQuestions.length) {
         setCurrentQuestion(nextQuestion);
-        setTimer(10);
+        setTimer(15);
       } else {
         setShowScore(true);
         updateUser();
@@ -44,7 +44,7 @@ export function Game() {
     };
   }, [currentQuestion, showScore, timer]);
   const resetTimer = () => {
-    setTimer(10);
+    setTimer(20);
   };
 
   useEffect(() => {

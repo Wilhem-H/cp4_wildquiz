@@ -23,8 +23,8 @@ export default function Header() {
           <img src={logo} alt="logo page web" />
           <div className="header_user">
             <div className="header_userInfo">
-              <p>{user.pseudo}</p>
-              <p>{user.score}</p>
+              <p>{user.pseudo} </p>
+              <p>ton score : {user.score}</p>
             </div>
             <div className="header_button" onClick={handleClick}>
               <IconButton

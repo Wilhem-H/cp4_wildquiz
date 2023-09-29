@@ -10,16 +10,15 @@ import "./Home.css";
 
 export default function Home() {
   const { setUser } = useUser();
+  const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [player, setPlayer] = useState();
   const [error, setError] = useState(false);
-  const navigate = useNavigate();
 
   const handleClick = (event) => {
     event.preventDefault();
-    if (email === "admin@admin.fr") {
+    if (email.includes("admin")) {
       fetch(
         `${
           import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
@@ -119,6 +118,10 @@ export default function Home() {
         <Link to="/inscription">
           <p>Pas encore inscrit ? Clique ici</p>
         </Link>
+
+        <a href="mailto:wilhem.hafsa@outlook.fr" target="_blank" id="contactUs">
+          Contactez-nous
+        </a>
       </form>
     </div>
   );
